@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你被骗了！</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #0b0b0b;
+      font-family: system-ui, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .prank-message {
+      font-size: clamp(3rem, 15vw, 8rem);
+      font-weight: 900;
+      letter-spacing: 0.05em;
+      color: #ff3b3b;
+      text-shadow: 0 0 20px rgba(255, 59, 59, 0.7), 0 0 40px rgba(255, 0, 0, 0.4);
+      background: linear-gradient(145deg, #ff4d4d, #a00);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: shake 0.4s ease-in-out infinite alternate;
+      user-select: none;
+      line-height: 1.2;
+    }
+
+    .sub-message {
+      margin-top: 1.5rem;
+      font-size: clamp(1rem, 4vw, 2rem);
+      font-weight: 400;
+      color: #888;
+      letter-spacing: 0.08em;
+      user-select: none;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: translateX(-5px) rotate(-1deg);
+      }
+      100% {
+        transform: translateX(5px) rotate(1deg);
+      }
+    }
+
+    @supports not (-webkit-background-clip: text) {
+      .prank-message {
+        color: #ff3b3b;
+        background: none;
+        -webkit-text-fill-color: #ff3b3b;
+        text-shadow: 0 0 20px #f00;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="prank-message">你被骗了！</div>
+  <div class="sub-message">你还真想看啊？</div>
+
+  <script>
+    setTimeout(() => {
+      window.location.href = 'https://www.bilibili.com/video/BV1GJ411x7h7/';
+    }, 1000);
+  </script>
+</body>
+</html>
